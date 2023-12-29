@@ -18,6 +18,7 @@ let output: string = `\n`
 for (let i: number = 1; i <= limit; i++) {
   output += `${base} x ${i} = ${i * base} \n`
 }
+
 //INFO agrapamos la cabecera con la salida
 output = header + output
 
