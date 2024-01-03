@@ -11,9 +11,13 @@ export interface CreateTableOptions {
 export class CreateTable implements CreateTableUseCase {
   constructor() {}
   execute({ base, limit = 10 }: CreateTableOptions) {
-    let output: string = `\n`
+    let output: string = ``
     for (let i: number = 1; i <= limit; i++) {
-      output += `${base} x ${i} = ${i * base} \n`
+      if (i < limit) {
+        output += `${base} x ${i} = ${i * base} \n`
+      } else {
+        output += `${base} x ${i} = ${i * base}`
+      }
     }
     return output
   }
